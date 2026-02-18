@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Unique HTML Tags</title>
+	<style>
+		body { font-family: sans-serif; margin: 2em; background: #f9f9f9; }
+		section { margin-bottom: 1.5em; padding: 1em; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px #0001; }
+		h2 { color: #2a6; font-size: 1.2em; }
+		p { color: #444; margin: 0.5em 0 1em 0; }
+		select { font-size: 1em; }
+	</style>
+</head>
+<body>
+	<h1>Unique HTML Tags</h1>
+
+	<section>
+		<h2>&lt;optgroup&gt; — grouped dropdowns without JavaScript</h2>
+		<p><b>optgroup</b> wraps options under a label inside a dropdown. The label can't be selected — it's just a heading. Way more useful than it sounds for long lists.</p>
+		<label for="fruits">Pick a fruit:</label>
+		<select id="fruits">
+			<optgroup label="Citrus">
+				<option>Orange</option>
+				<option>Lemon</option>
+			</optgroup>
+			<optgroup label="Berries">
+				<option>Strawberry</option>
+				<option>Blueberry</option>
+			</optgroup>
+		</select>
+	</section>
+
+	<section>
+		<h2>&lt;annotation-xml&gt; — invisible note inside a math formula</h2>
+		<p><b>annotation-xml</b> attaches a hidden description to a formula — users don't see it but screen readers can. Kind of like alt text but for equations.</p>
+		<math xmlns="http://www.w3.org/1998/Math/MathML">
+			<semantics>
+				<mrow>
+					<mi>x</mi>
+					<mo>=</mo>
+					<mn>5</mn>
+				</mrow>
+				
+				<annotation-xml encoding="application/xml">
+					<description>x equals 5</description>
+				</annotation-xml>
+			</semantics>
+		</math>
+	</section>
+
+	<section>
+		<h2>&lt;mtable&gt; — basically a table but inside math</h2>
+		<p><b>mtable</b> works just like a regular HTML table — mtr is the row, mtd is the cell. Same thing, just with an m in front. Needed when you want to display a matrix inside MathML.</p>
+		<math xmlns="http://www.w3.org/1998/Math/MathML">
+			<mtable>
+				<mtr>
+					<mtd><mi>a</mi></mtd>
+					<mtd><mi>b</mi></mtd>
+				</mtr>
+				<mtr>
+					<mtd><mi>c</mi></mtd>
+					<mtd><mi>d</mi></mtd>
+				</mtr>
+			</mtable>
+		</math>
+	</section>
+
+	<section>
+		<h2>&lt;munderover&gt; — puts things above and below a symbol</h2>
+		<p><b>munderover</b> takes 3 children — the symbol, what goes below, then what goes above. The order tripped me up at first. Great for summation signs where you need limits on the sigma.</p>
+		<math xmlns="http://www.w3.org/1998/Math/MathML">
+			<mrow>
+				<munderover>
+					<mo>&#x2211;</mo>
+					<mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
+					<mi>n</mi>
+				</munderover>
+				<msub><mi>a</mi><mi>i</mi></msub>
+			</mrow>
+		</math>
+	</section>
+
+</body>
+</html>
